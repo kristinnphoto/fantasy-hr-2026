@@ -518,27 +518,27 @@ window.addEventListener('load', function() {
 //  ALL DATA
 // ═══════════════════════════════════
 const standings = [
-  {r:1, name:"Fc Shogun",           pts:2372,color:"#F59E0B",avg:62.4},
-  {r:2, name:"FcK",                 pts:2269,color:"#E63329",avg:59.7},
-  {r:3, name:"Bepool",              pts:2196,color:"#A8A8A8",avg:57.8},
-  {r:4, name:"Werder Beermen",      pts:2139,color:"#CD7F32",avg:56.3},
-  {r:5, name:"Szobo Slay Queen!",   pts:2091,color:"#8B5CF6",avg:55.0},
-  {r:6, name:"Kung Pao FC",         pts:2090,color:"#F97316",avg:55.0},
-  {r:7, name:"Platelet FC",         pts:1974,color:"#14B8A6",avg:51.9},
-  {r:8, name:"Entourage",           pts:1966,color:"#3B82F6",avg:51.7},
-  {r:9, name:"SK",                  pts:1931,color:"#22C55E",avg:50.8},
-  {r:10,name:"Sveinatunga FC",      pts:1900,color:"#EC4899",avg:50.0},
-  {r:11,name:"Baddi",               pts:1881,color:"#84CC16",avg:49.5},
-  {r:12,name:"búllan",              pts:1842,color:"#06B6D4",avg:48.5},
-  {r:13,name:"Mobbi boltabulla",    pts:1789,color:"#6366F1",avg:47.1},
-  {r:14,name:"teamprosecco",        pts:1768,color:"#EAB308",avg:46.5},
-  {r:15,name:"Brynjar FC",          pts:1753,color:"#EF4444",avg:47.4},
-  {r:16,name:"Tuðran",              pts:1747,color:"#F43F5E",avg:46.0},
-  {r:17,name:"DiBaggio10",          pts:1741,color:"#7C3AED",avg:45.8},
-  {r:18,name:"Reditus Diminutio",   pts:1712,color:"#0EA5E9",avg:45.1},
-  {r:19,name:"Peter Halldorrsson",  pts:1618,color:"#10B981",avg:42.6},
-  {r:20,name:"Mosfellskur draumur", pts:1412,color:"#D97706",avg:37.2},
-  {r:21,name:"Djöfullinn",          pts:924, color:"#9CA3AF",avg:24.3},
+  {r:1, name:"Fc Shogun",           pts:2372,color:"#F59E0B",avg:62.4,mgr:"Pétur Marin Jónsson"},
+  {r:2, name:"FcK",                 pts:2269,color:"#E63329",avg:59.7,mgr:"Kristinn Magnusson"},
+  {r:3, name:"Bepool",              pts:2196,color:"#A8A8A8",avg:57.8,mgr:"Björn Þór Jónsson"},
+  {r:4, name:"Werder Beermen",      pts:2139,color:"#CD7F32",avg:56.3,mgr:"Magnus Gislason"},
+  {r:5, name:"Szobo Slay Queen!",   pts:2091,color:"#8B5CF6",avg:55.0,mgr:"Hjördís Hreinsdóttir"},
+  {r:6, name:"Kung Pao FC",         pts:2090,color:"#F97316",avg:55.0,mgr:"Sai Krishna Padamata"},
+  {r:7, name:"Platelet FC",         pts:1974,color:"#14B8A6",avg:51.9,mgr:"Ólafur Eysteinn Sigurjónsson"},
+  {r:8, name:"Entourage",           pts:1966,color:"#3B82F6",avg:51.7,mgr:"Baldur Pall Gudmundsson"},
+  {r:9, name:"SK",                  pts:1931,color:"#22C55E",avg:50.8,mgr:"Saga Kjartansdóttir"},
+  {r:10,name:"Sveinatunga FC",      pts:1900,color:"#EC4899",avg:50.0,mgr:"Jóhann Gunnar Stefánsson"},
+  {r:11,name:"Baddi",               pts:1881,color:"#84CC16",avg:49.5,mgr:"Baddi Gulla"},
+  {r:12,name:"búllan",              pts:1842,color:"#06B6D4",avg:48.5,mgr:"Rakel Gunnarsdóttir"},
+  {r:13,name:"Mobbi boltabulla",    pts:1789,color:"#6366F1",avg:47.1,mgr:"Ásthildur Gunnarsdóttir"},
+  {r:14,name:"teamprosecco",        pts:1768,color:"#EAB308",avg:46.5,mgr:"María Guðjónsdóttir"},
+  {r:15,name:"Brynjar FC",          pts:1753,color:"#EF4444",avg:47.4,mgr:"Brynjar Halldorsson"},
+  {r:16,name:"Tuðran",              pts:1747,color:"#F43F5E",avg:46.0,mgr:"Valgerður Þórsdóttir"},
+  {r:17,name:"DiBaggio10",          pts:1741,color:"#7C3AED",avg:45.8,mgr:"Arnljotur Astvaldsson"},
+  {r:18,name:"Reditus Diminutio",   pts:1712,color:"#0EA5E9",avg:45.1,mgr:"Eyjolfur Asgeirsson"},
+  {r:19,name:"Peter Halldorrsson",  pts:1618,color:"#10B981",avg:42.6,mgr:"Peter Gerard O'Donoghue"},
+  {r:20,name:"Mosfellskur draumur", pts:1412,color:"#D97706",avg:37.2,mgr:"Sveinn Þorgeirsson"},
+  {r:21,name:"Djöfullinn",          pts:924, color:"#9CA3AF",avg:24.3,mgr:"Oli Venna"},
 ];
 const meta = {};
 standings.forEach(t=>meta[t.name]=t);
@@ -771,7 +771,7 @@ standings.forEach(t=>{
   else if(t.r===2)badge=`<span class="rb r2">🥈</span>`;
   else if(t.r===3)badge=`<span class="rb r3">🥉</span>`;
   else badge=`<span style="font-weight:600;color:#bbb;padding-left:2px">${t.r}.</span>`;
-  tr.innerHTML=`<td>${badge}</td><td><span class="dot" style="background:${t.color}"></span>${t.name}</td><td style="font-weight:700;font-size:14px">${t.pts.toLocaleString()}</td><td style="color:var(--gray)">${t.avg}</td><td style="font-size:11px;color:#bbb">${notes[t.name]||''}</td>`;
+  tr.innerHTML=`<td>${badge}</td><td><span class="dot" style="background:${t.color}"></span>${t.name}<br><span style="font-size:11px;color:#888;font-weight:400">${t.mgr||''}</span></td><td style="font-weight:700;font-size:14px">${t.pts.toLocaleString()}</td><td style="color:var(--gray)">${t.avg}</td><td style="font-size:11px;color:#bbb">${notes[t.name]||''}</td>`;
   stdb.appendChild(tr);
 });
 
