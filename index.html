@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fantasy HR</title>
+<meta name="description" content="The HR Deildin workplace Fantasy Premier League at Reykjavík University — gameweek breakdowns and season recaps.">
+<meta property="og:title" content="Fantasy HR">
+<meta property="og:description" content="The HR Deildin workplace Fantasy Premier League at Reykjavík University.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>
+:root{
+  --paper:#E9EBE4; --card:#F8F9F4; --sunk:#E1E4DA;
+  --ink:#171A16; --ink2:#4C5349; --ink3:#7C837A;
+  --rule:#CFD4C8; --rule-strong:#AEB6A6;
+  --claret:#8E2740; --claret-soft:#8E274022;
+  --gold:#A87C10; --gold-ink:#8A6608;
+  --on-claret:#FFFFFF;
+  --shadow:0 1px 0 #0000000d, 0 8px 24px -18px #0f150c66;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --paper:#101310; --card:#191D18; --sunk:#22271F;
+    --ink:#EAEEE7; --ink2:#A9B0A6; --ink3:#7C8479;
+    --rule:#2A3027; --rule-strong:#3D4539;
+    --claret:#D2748A; --claret-soft:#D2748A26;
+    --gold:#A0912F; --gold-ink:#D9B65A;
+    --on-claret:#12140F;
+    --shadow:0 1px 0 #ffffff08, 0 10px 30px -20px #000;
+  }
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0; background:var(--paper); color:var(--ink);
+  font-family:"Newsreader",Georgia,"Times New Roman",serif;
+  font-size:17px; line-height:1.55; -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:940px;margin:0 auto;padding:0 24px 96px}
+h1,h2,h3{font-family:"Anton",Impact,sans-serif;font-weight:400;text-transform:uppercase;text-wrap:balance;margin:0;letter-spacing:.01em}
+.eyebrow{font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink3)}
+
+.masthead{border-bottom:3px solid var(--claret);padding:44px 0 28px}
+.mast-top{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between;margin-bottom:20px}
+.crest{display:flex;align-items:center;gap:10px}
+.badge{width:26px;height:26px;border-radius:3px;background:var(--claret);display:grid;place-items:center;color:var(--on-claret);font-family:"Anton",sans-serif;font-size:14px;line-height:1}
+h1{font-size:clamp(48px,11vw,112px);line-height:.86}
+h1 .thin{display:block;font-size:.26em;letter-spacing:.12em;color:var(--claret);margin-bottom:.6em}
+.standfirst{font-size:clamp(17px,2.1vw,21px);line-height:1.45;color:var(--ink2);max-width:58ch;margin:22px 0 0;font-style:italic}
+
+section{padding-top:52px}
+.sec-head{display:flex;align-items:baseline;gap:14px;border-bottom:1px solid var(--rule-strong);padding-bottom:8px;margin-bottom:22px}
+.sec-head h2{font-size:clamp(20px,3vw,28px);line-height:1}
+.sec-head .aside{margin-left:auto;font-family:"IBM Plex Mono",monospace;font-size:11px;color:var(--ink3);letter-spacing:.1em;text-transform:uppercase}
+
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:14px}
+a.item{
+  display:flex;flex-direction:column;gap:9px;text-decoration:none;color:inherit;
+  border:1px solid var(--rule);background:var(--card);padding:22px 20px;box-shadow:var(--shadow);
+  transition:border-color .15s ease, transform .15s ease;
+}
+a.item:hover{border-color:var(--claret);transform:translateY(-2px)}
+a.item:focus-visible{outline:2px solid var(--claret);outline-offset:3px}
+a.item .k{font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:var(--claret)}
+a.item h3{font-size:22px;line-height:1.05}
+a.item p{margin:0;font-size:15.5px;color:var(--ink2);line-height:1.45}
+a.item .go{margin-top:auto;font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink3);padding-top:6px}
+a.item:hover .go{color:var(--claret)}
+a.item.lead{grid-column:1/-1;border-left:3px solid var(--claret)}
+a.item.lead h3{font-size:clamp(26px,4vw,38px)}
+.stats{display:flex;flex-wrap:wrap;gap:6px 26px;margin-top:4px}
+.stats b{font-family:"IBM Plex Mono",monospace;font-size:12px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--ink3)}
+.stats b span{color:var(--gold-ink);font-weight:600}
+
+footer{margin-top:60px;border-top:1px solid var(--rule-strong);padding-top:18px;color:var(--ink3);font-size:14px}
+footer p{margin:0 0 8px;max-width:70ch}
+@media (prefers-reduced-motion: reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="masthead">
+  <div class="mast-top">
+    <div class="crest"><span class="badge">HR</span><span class="eyebrow">Reykjavík University &middot; Fantasy Premier League</span></div>
+    <span class="eyebrow">Since 2025</span>
+  </div>
+  <h1><span class="thin">HR Deildin</span>Fantasy HR</h1>
+  <p class="standfirst">The office league, written up properly. Gameweek breakdowns through the season, and a full recap when it's over.</p>
+</header>
+
+<section>
+  <div class="sec-head"><h2>2026/27</h2><span class="aside">16 managers &middot; in progress</span></div>
+  <div class="grid">
+    <a class="item lead" href="fantasy_hr_2026_27_gw01.html">
+      <span class="k">Gameweek 1</span>
+      <h3>The Crowd Was Wrong</h3>
+      <p>Ten of sixteen managers captained Haaland and he scored two. The most-owned eleven in the league scored exactly the global average. Standings, ownership, the awards and the full table.</p>
+      <div class="stats">
+        <b>Top score <span>74</span></b>
+        <b>League average <span>49.2</span></b>
+        <b>Squad overlap <span>21%</span></b>
+        <b>Bench boosts <span>3</span></b>
+      </div>
+      <span class="go">Read the breakdown &rarr;</span>
+    </a>
+  </div>
+</section>
+
+<section>
+  <div class="sec-head"><h2>2025/26</h2><span class="aside">21 managers &middot; 38 gameweeks</span></div>
+  <div class="grid">
+    <a class="item" href="fantasy_hr_2025_26.html">
+      <span class="k">Season recap</span>
+      <h3>The Full Season</h3>
+      <p>Final standings, monthly champions, the season's rivalries and the special awards. Fc Shogun took it on 2,372 points.</p>
+      <span class="go">Open the recap &rarr;</span>
+    </a>
+    <a class="item" href="fantasy_hr_animated.html">
+      <span class="k">Animated</span>
+      <h3>The Season Race</h3>
+      <p>Every gameweek replayed, position by position, with playback controls from half speed to four times.</p>
+      <span class="go">Play the season &rarr;</span>
+    </a>
+  </div>
+</section>
+
+<footer>
+  <p>Built from the official Fantasy Premier League API. Put together by Kristinn Magnússon.</p>
+</footer>
+
+</div>
+</body>
+</html>
