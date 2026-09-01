@@ -1,0 +1,884 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fantasy HR &middot; 2026/27 Gameweeks</title>
+<meta name="description" content="HR Deildin, the Reykjavík University workplace Fantasy Premier League: gameweek-by-gameweek breakdowns for the 2026/27 season.">
+<meta property="og:title" content="Fantasy HR &middot; 2026/27 Gameweeks">
+<meta property="og:description" content="HR Deildin gameweek breakdowns — standings, transfers, ownership and awards.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>
+
+:root{
+  --paper:#E9EBE4; --card:#F8F9F4; --sunk:#E1E4DA;
+  --ink:#171A16; --ink2:#4C5349; --ink3:#7C837A;
+  --rule:#CFD4C8; --rule-strong:#AEB6A6;
+  --claret:#8E2740; --claret-soft:#8E274022;
+  --gold:#A87C10; --gold-ink:#8A6608; --gold-soft:#A87C1022;
+  --pitch:#33654B; --pitch-line:#ffffff55; --pitch-ink:#F3F6F0;
+  --up:#2F6B4F; --down:#8E2740;
+  --on-claret:#FFFFFF;
+  --shadow:0 1px 0 #0000000d, 0 8px 24px -18px #0f150c66;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#101310; --card:#191D18; --sunk:#22271F;
+    --ink:#EAEEE7; --ink2:#A9B0A6; --ink3:#7C8479;
+    --rule:#2A3027; --rule-strong:#3D4539;
+    --claret:#D2748A; --claret-soft:#D2748A26;
+    --gold:#A0912F; --gold-ink:#D9B65A; --gold-soft:#A0912F2e;
+    --pitch:#22402F; --pitch-line:#ffffff33; --pitch-ink:#E7EEE7;
+    --up:#79B694; --down:#D2748A;
+    --on-claret:#12140F;
+    --shadow:0 1px 0 #ffffff08, 0 10px 30px -20px #000;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#101310; --card:#191D18; --sunk:#22271F;
+  --ink:#EAEEE7; --ink2:#A9B0A6; --ink3:#7C8479;
+  --rule:#2A3027; --rule-strong:#3D4539;
+  --claret:#D2748A; --claret-soft:#D2748A26;
+  --gold:#A0912F; --gold-ink:#D9B65A; --gold-soft:#A0912F2e;
+  --pitch:#22402F; --pitch-line:#ffffff33; --pitch-ink:#E7EEE7;
+  --up:#79B694; --down:#D2748A;
+  --on-claret:#12140F;
+  --shadow:0 1px 0 #ffffff08, 0 10px 30px -20px #000;
+}
+
+*{box-sizing:border-box}
+body{
+  background:var(--paper); color:var(--ink);
+  font-family:"Newsreader",Georgia,"Times New Roman",serif;
+  font-size:17px; line-height:1.55; margin:0;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px 96px}
+h1,h2,h3,.display{font-family:"Anton",Impact,"Haettenschweiler",sans-serif;font-weight:400;letter-spacing:.01em;text-transform:uppercase;text-wrap:balance;margin:0}
+.mono{font-family:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace;font-variant-numeric:tabular-nums}
+.eyebrow{font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink3)}
+
+/* ---------- masthead ---------- */
+.masthead{border-bottom:3px solid var(--claret);padding:40px 0 26px}
+.mast-top{display:flex;flex-wrap:wrap;gap:12px;align-items:baseline;justify-content:space-between;margin-bottom:18px}
+.crest{display:flex;align-items:center;gap:10px}
+.crest .badge{width:26px;height:26px;border-radius:3px;background:var(--claret);display:grid;place-items:center;color:var(--on-claret);font-family:"Anton",sans-serif;font-size:14px;line-height:1}
+h1{font-size:clamp(52px,11vw,124px);line-height:.86;letter-spacing:-.005em}
+h1 .thin{display:block;font-size:.3em;letter-spacing:.12em;color:var(--claret);margin-bottom:.5em}
+.standfirst{font-size:clamp(18px,2.2vw,22px);line-height:1.45;color:var(--ink2);max-width:60ch;margin:22px 0 0;font-style:italic}
+.mast-meta{display:flex;flex-wrap:wrap;gap:8px 22px;margin-top:22px}
+.mast-meta span{font-family:"IBM Plex Mono",monospace;font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink3)}
+
+/* ---------- sections ---------- */
+section{padding-top:52px}
+.sec-head{display:flex;align-items:baseline;gap:14px;border-bottom:1px solid var(--rule-strong);padding-bottom:8px;margin-bottom:24px}
+.sec-head h2{font-size:clamp(22px,3.2vw,30px);line-height:1}
+.sec-head .n{font-family:"IBM Plex Mono",monospace;font-size:11px;color:var(--claret);letter-spacing:.14em;padding-top:4px}
+.sec-head .aside{margin-left:auto;font-family:"IBM Plex Mono",monospace;font-size:11px;color:var(--ink3);letter-spacing:.1em;text-transform:uppercase}
+.note{color:var(--ink2);max-width:66ch;margin:18px 0 0;font-size:16.5px}
+.note strong{color:var(--ink);font-weight:600}
+
+/* ---------- stat tiles ---------- */
+.tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:1px;background:var(--rule);border:1px solid var(--rule);margin-top:28px}
+.tile{background:var(--card);padding:20px 18px 18px}
+.tile .k{font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink3);display:block;margin-bottom:10px}
+.tile .v{font-family:"Anton",sans-serif;font-size:46px;line-height:.9;letter-spacing:-.01em;display:block}
+.tile .v small{font-size:.42em;letter-spacing:.02em;color:var(--ink2);margin-left:2px}
+.tile .d{font-size:14.5px;line-height:1.4;color:var(--ink2);margin-top:10px;display:block}
+.tile.hero .v{color:var(--claret)}
+
+/* ---------- feature panel ---------- */
+.feature{margin-top:28px;border:1px solid var(--rule);background:var(--card);display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.35fr);box-shadow:var(--shadow)}
+@media(max-width:720px){.feature{grid-template-columns:1fr}}
+.feature .big{background:var(--sunk);padding:30px 26px;display:flex;flex-direction:column;justify-content:center;gap:6px;border-right:1px solid var(--rule)}
+@media(max-width:720px){.feature .big{border-right:0;border-bottom:1px solid var(--rule)}}
+.feature .big .num{font-family:"Anton",sans-serif;font-size:clamp(76px,16vw,132px);line-height:.8;color:var(--claret);letter-spacing:-.02em}
+.feature .big .cap{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink2);margin-top:14px}
+.feature .body{padding:28px 26px}
+.feature .body h3{font-size:24px;margin-bottom:12px}
+.feature .body p{margin:0 0 14px;color:var(--ink2);font-size:16.5px}
+.feature .body p:last-child{margin-bottom:0}
+.armband{display:flex;flex-wrap:wrap;gap:5px;margin:18px 0 14px}
+.armband i{width:19px;height:26px;border-radius:2px;background:var(--sunk);border:1px solid var(--rule-strong);display:block}
+.armband i.on{background:var(--claret);border-color:var(--claret)}
+.armband i.gold{background:var(--gold);border-color:var(--gold)}
+.armband-key{font-family:"IBM Plex Mono",monospace;font-size:11px;color:var(--ink3);letter-spacing:.06em}
+
+/* ---------- bar charts ---------- */
+.chart{margin-top:26px;display:flex;flex-direction:column;gap:7px}
+.bar{display:grid;grid-template-columns:24px minmax(96px,168px) 1fr 40px 42px;align-items:center;gap:12px;position:relative;padding:3px 0;border-radius:3px}
+.bar:hover{background:var(--claret-soft)}
+.bar .rk{font-family:"IBM Plex Mono",monospace;font-size:11.5px;color:var(--ink3);text-align:right}
+.bar .nm{font-size:15px;line-height:1.15;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.bar .nm em{display:block;font-style:normal;font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:.05em;color:var(--ink3);text-transform:uppercase;overflow:hidden;text-overflow:ellipsis}
+.bar .track{height:16px;background:var(--sunk);border-radius:2px;overflow:hidden}
+.bar .fill{display:block;height:100%;background:var(--gold);border-radius:0 4px 4px 0}
+.bar.hl .fill{background:var(--claret)}
+.bar .val{font-family:"IBM Plex Mono",monospace;font-size:14px;font-weight:600;text-align:right}
+.mv{font-family:"IBM Plex Mono",monospace;font-size:11.5px;letter-spacing:.02em;justify-self:start;color:var(--ink3)}
+.mv.up{color:var(--up)} .mv.down{color:var(--down)}
+.tag{font-family:"IBM Plex Mono",monospace;font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;border:1px solid var(--rule-strong);border-radius:99px;padding:1px 6px;color:var(--ink2);white-space:nowrap;justify-self:start}
+.tag.hit{border-color:var(--claret);color:var(--claret)}
+.legend{display:flex;flex-wrap:wrap;gap:8px 18px;margin-top:16px;align-items:center}
+.legend .item{display:flex;align-items:center;gap:7px;font-family:"IBM Plex Mono",monospace;font-size:11px;color:var(--ink2);letter-spacing:.06em;text-transform:uppercase}
+.legend .sw{width:14px;height:10px;border-radius:2px;display:inline-block}
+.sw.claret{background:var(--claret)} .sw.gold{background:var(--gold)} .sw.sunk{background:var(--sunk);border:1px solid var(--rule-strong)}
+
+/* ownership variant */
+.bar.own{grid-template-columns:minmax(104px,150px) 40px 1fr 34px 44px}
+.bar.own .pos{font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:.08em;color:var(--ink3)}
+.bar.own .pct{font-family:"IBM Plex Mono",monospace;font-size:12.5px;color:var(--ink2);text-align:right}
+.score{font-family:"IBM Plex Mono",monospace;font-size:12.5px;font-weight:600;text-align:center;border-radius:3px;padding:2px 0;background:var(--sunk);color:var(--ink2)}
+.score.good{background:var(--gold-soft);color:var(--gold-ink)}
+.score.bad{color:var(--claret)}
+
+/* club variant */
+.bar.club{grid-template-columns:56px 1fr 34px}
+.bar.club .nm{font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.06em}
+.bar.club .track{height:13px}
+
+/* ---------- transfer ledger ---------- */
+.ledger{margin-top:26px;border:1px solid var(--rule);background:var(--card);overflow-x:auto;box-shadow:var(--shadow)}
+.ledger table{border-collapse:collapse;width:100%;min-width:640px;font-family:"IBM Plex Mono",monospace;font-size:12.5px;font-variant-numeric:tabular-nums}
+.ledger th{font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink3);font-weight:500;text-align:left;padding:12px 14px;border-bottom:1px solid var(--rule-strong)}
+.ledger td{padding:9px 14px;border-bottom:1px solid var(--rule);white-space:nowrap}
+.ledger tr:last-child td{border-bottom:0}
+.ledger td.n{text-align:right;font-weight:600}
+.ledger .plus{color:var(--up)} .ledger .minus{color:var(--claret)}
+.ledger .arrow{color:var(--ink3)}
+.swing{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin-top:14px}
+
+/* ---------- pitch ---------- */
+.pitchwrap{margin-top:26px;display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:26px;align-items:start}
+@media(max-width:800px){.pitchwrap{grid-template-columns:1fr}}
+.pitch{background:
+   repeating-linear-gradient(180deg,#ffffff0a 0 40px,#0000000a 40px 80px),
+   var(--pitch);
+  border:1px solid var(--rule);border-radius:4px;padding:22px 16px;position:relative;overflow:hidden}
+.pitch::before{content:"";position:absolute;left:50%;top:0;bottom:0;width:1px;background:var(--pitch-line)}
+.pitch::after{content:"";position:absolute;left:50%;top:50%;width:88px;height:88px;border:1px solid var(--pitch-line);border-radius:50%;transform:translate(-50%,-50%)}
+.line{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;position:relative;z-index:1;margin-bottom:16px}
+.line:last-child{margin-bottom:0}
+.plr{background:#0f1a13d9;border:1px solid #ffffff2e;border-radius:4px;padding:6px 8px 7px;min-width:78px;text-align:center;color:var(--pitch-ink)}
+.plr b{display:block;font-family:"IBM Plex Mono",monospace;font-size:11px;font-weight:600;letter-spacing:.02em;white-space:nowrap}
+.plr span{display:block;font-family:"IBM Plex Mono",monospace;font-size:9px;letter-spacing:.08em;color:#ffffffa6;margin-top:2px}
+.plr u{display:inline-block;text-decoration:none;font-family:"Anton",sans-serif;font-size:15px;line-height:1;margin-top:5px}
+.plr u.hi{color:#F0C860} .plr u.lo{color:#E79AAA}
+.xi-side .kpi{border:1px solid var(--rule);background:var(--card);padding:20px;margin-bottom:14px}
+.xi-side .kpi .v{font-family:"Anton",sans-serif;font-size:58px;line-height:.85;color:var(--claret)}
+.xi-side .kpi .k{font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink3);display:block;margin-bottom:8px}
+.xi-side p{color:var(--ink2);font-size:16px;margin:0 0 12px}
+
+/* ---------- award cards ---------- */
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(258px,1fr));gap:14px;margin-top:26px}
+.card{border:1px solid var(--rule);background:var(--card);padding:20px 18px;display:flex;flex-direction:column;gap:9px;box-shadow:var(--shadow)}
+.card .k{font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:var(--claret)}
+.card h3{font-size:19px;line-height:1.05}
+.card .sub{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.07em;text-transform:uppercase;color:var(--ink3);margin-top:-4px}
+.card p{margin:0;font-size:15.5px;color:var(--ink2);line-height:1.45}
+.card .num{font-family:"Anton",sans-serif;font-size:40px;line-height:.85;color:var(--gold-ink)}
+
+/* ---------- table ---------- */
+details{margin-top:26px;border-top:1px solid var(--rule)}
+summary{cursor:pointer;padding:14px 0;font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink2)}
+summary:focus-visible{outline:2px solid var(--claret);outline-offset:3px}
+.tablescroll{overflow-x:auto;padding-bottom:8px}
+table.full{border-collapse:collapse;width:100%;font-family:"IBM Plex Mono",monospace;font-size:12.5px;font-variant-numeric:tabular-nums}
+table.full th,table.full td{text-align:left;padding:7px 12px 7px 0;border-bottom:1px solid var(--rule);white-space:nowrap}
+table.full th{font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink3);font-weight:500}
+table.full td.n{text-align:right;padding-right:16px}
+
+footer{margin-top:64px;border-top:1px solid var(--rule-strong);padding-top:18px;color:var(--ink3);font-size:14px}
+footer p{margin:0 0 8px;max-width:70ch}
+footer .mono{font-size:11.5px;letter-spacing:.05em}
+@media (prefers-reduced-motion: reduce){*{animation:none!important;transition:none!important}}
+
+/* ---------- season shell: gameweek switcher ---------- */
+.sitebar{position:sticky;top:0;z-index:50;background:var(--paper);border-bottom:1px solid var(--rule);
+  backdrop-filter:saturate(1.1) blur(6px)}
+.sitebar .inner{max-width:1080px;margin:0 auto;padding:10px 24px;display:flex;flex-wrap:wrap;gap:12px 20px;align-items:center}
+.sitebar .home{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--ink3);text-decoration:none;display:flex;align-items:center;gap:8px}
+.sitebar .home:hover{color:var(--claret)}
+.sitebar .home:focus-visible{outline:2px solid var(--claret);outline-offset:3px}
+.sitebar .home .badge{width:22px;height:22px;border-radius:3px;background:var(--claret);display:grid;place-items:center;
+  color:var(--on-claret);font-family:"Anton",sans-serif;font-size:12px;line-height:1}
+.gwnav{margin-left:auto;display:flex;gap:6px;flex-wrap:wrap}
+.gwnav button{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--ink2);background:var(--card);border:1px solid var(--rule-strong);border-radius:99px;
+  padding:6px 14px;cursor:pointer;transition:background .15s ease,color .15s ease,border-color .15s ease}
+.gwnav button:hover{border-color:var(--claret);color:var(--claret)}
+.gwnav button:focus-visible{outline:2px solid var(--claret);outline-offset:3px}
+.gwnav button[aria-selected="true"]{background:var(--claret);border-color:var(--claret);color:var(--on-claret)}
+.gwpanel[hidden]{display:none!important}
+.tag.bb{border-color:var(--gold);color:var(--gold-ink)}
+</style>
+</head>
+<body>
+
+<div class="sitebar">
+  <div class="inner">
+    <a class="home" href="index.html"><span class="badge">HR</span>Fantasy HR</a>
+    <div class="gwnav" role="tablist" aria-label="Gameweek">
+      <button type="button" role="tab" id="tab-gw1" aria-controls="gw1" aria-selected="false" data-gw="gw1">Gameweek 1</button>
+      <button type="button" role="tab" id="tab-gw2" aria-controls="gw2" aria-selected="true" data-gw="gw2">Gameweek 2</button>
+    </div>
+  </div>
+</div>
+
+<div class="gwpanel" id="gw1" role="tabpanel" aria-labelledby="tab-gw1" hidden>
+<div class="wrap">
+<header class="masthead">
+  <div class="mast-top">
+    <div class="crest"><span class="badge">HR</span><span class="eyebrow">HR Deildin &middot; Fantasy Premier League 2026/27</span></div>
+    <span class="eyebrow">League 813742</span>
+  </div>
+  <h1><span class="thin">Gameweek One</span>The Crowd<br>Was Wrong</h1>
+  <p class="standfirst">Sixteen managers, 240 picks, one very expensive Norwegian who did almost nothing. Here is how the first week of the office league actually went.</p>
+  <div class="mast-meta">
+    <span>16 managers</span><span>240 picks</span><span>106 different players</span><span>3 chips burned</span><span>Data 25 Aug 2026</span>
+  </div>
+</header>
+
+<section>
+  <div class="sec-head"><span class="n">01</span><h2>The week in five numbers</h2></div>
+  <div class="tiles">
+    <div class="tile hero">
+      <span class="k">Winning score</span>
+      <span class="v">74</span>
+      <span class="d">Kristinn (KMUFC). The global gameweek high was 131.</span>
+    </div>
+    <div class="tile">
+      <span class="k">League average</span>
+      <span class="v">49.2</span>
+      <span class="d">The worldwide average was 50. The office is, precisely, average.</span>
+    </div>
+    <div class="tile">
+      <span class="k">Spread, top to bottom</span>
+      <span class="v">46<small>pts</small></span>
+      <span class="d">74 down to 28 &mdash; after a single gameweek.</span>
+    </div>
+    <div class="tile">
+      <span class="k">Average squad overlap</span>
+      <span class="v">21<small>%</small></span>
+      <span class="d">Any two squads share about 3 players out of 15. This is not a template league.</span>
+    </div>
+    <div class="tile">
+      <span class="k">Owned by one manager</span>
+      <span class="v">57</span>
+      <span class="d">Of the 106 players picked, more than half were picked by exactly one person.</span>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="sec-head"><span class="n">02</span><h2>The Haaland problem</h2><span class="aside">Effective ownership 138%</span></div>
+  <div class="feature">
+    <div class="big">
+      <span class="num">2</span>
+      <span class="cap">Points scored by Erling Haaland</span>
+    </div>
+    <div class="body">
+      <h3>Ten armbands, four points</h3>
+      <p>Twelve of sixteen managers owned him. Ten of them captained him. He returned two points, which means the captaincy paid out <strong>four</strong> &mdash; and every one of those ten started the season already behind the six who didn't.</p>
+      <div class="armband" role="img" aria-label="Ten of sixteen armbands went to Haaland">
+        <i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i><i></i><i></i><i></i><i></i>
+      </div>
+      <p class="armband-key">10 / 16 captained Haaland &mdash; the other six went Bruno, Thiago, Isak, Semenyo, Wirtz and João Pedro.</p>
+      <p>Only one of those six was right. Ólafur's Platelet FC handed the armband to <strong>João Pedro</strong>, banked 22 points from one player, and sits fifth on a squad that scored 57 with no chip at all.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="sec-head"><span class="n">03</span><h2>Standings</h2><span class="aside">Gameweek 1 points</span></div>
+  <div class="chart" role="img" aria-label="Bar chart of gameweek 1 scores, from KMUFC on 74 down to Sveinatunga FC on 28">
+
+    <div class="bar hl"><span class="rk mono">1</span><span class="nm">KMUFC<em>Kristinn Magnússon</em></span><span class="track"><span class="fill" style="width:100%"></span></span><span class="val">74</span><span class="tag bb">BB</span></div>
+    <div class="bar"><span class="rk mono">2</span><span class="nm">DWLFC<em>David Lentz</em></span><span class="track"><span class="fill" style="width:91.9%"></span></span><span class="val">68</span><span class="tag bb">BB</span></div>
+    <div class="bar"><span class="rk mono">3</span><span class="nm">Fav of Ippa<em>Elísabet Jóhannesdóttir</em></span><span class="track"><span class="fill" style="width:79.7%"></span></span><span class="val">59</span><span></span></div>
+    <div class="bar"><span class="rk mono">4</span><span class="nm">Kung Pao FC<em>Sai Krishna Padamata</em></span><span class="track"><span class="fill" style="width:78.4%"></span></span><span class="val">58</span><span></span></div>
+    <div class="bar"><span class="rk mono">5</span><span class="nm">Platelet FC<em>Ólafur E. Sigurjónsson</em></span><span class="track"><span class="fill" style="width:77.0%"></span></span><span class="val">57</span><span></span></div>
+    <div class="bar"><span class="rk mono">6</span><span class="nm">BEPOOL<em>Björn Þór Jónsson</em></span><span class="track"><span class="fill" style="width:75.7%"></span></span><span class="val">56</span><span></span></div>
+    <div class="bar"><span class="rk mono">6</span><span class="nm">Diogo DaLess<em>Pétur Marin Jónsson</em></span><span class="track"><span class="fill" style="width:75.7%"></span></span><span class="val">56</span><span></span></div>
+    <div class="bar"><span class="rk mono">8</span><span class="nm">F10<em>Jóhann Hjartarson</em></span><span class="track"><span class="fill" style="width:63.5%"></span></span><span class="val">47</span><span class="tag bb">BB</span></div>
+    <div class="bar"><span class="rk mono">8</span><span class="nm">Excel Lent<em>Bryndís Kristinsdóttir</em></span><span class="track"><span class="fill" style="width:63.5%"></span></span><span class="val">47</span><span></span></div>
+    <div class="bar"><span class="rk mono">10</span><span class="nm">EkitikiTaka<em>Hjördís Hreinsdóttir</em></span><span class="track"><span class="fill" style="width:60.8%"></span></span><span class="val">45</span><span></span></div>
+    <div class="bar"><span class="rk mono">10</span><span class="nm">Werder Beermen<em>Magnús Gíslason</em></span><span class="track"><span class="fill" style="width:60.8%"></span></span><span class="val">45</span><span></span></div>
+    <div class="bar"><span class="rk mono">12</span><span class="nm">Destiny's child<em>Baldur Páll Guðmundsson</em></span><span class="track"><span class="fill" style="width:52.7%"></span></span><span class="val">39</span><span></span></div>
+    <div class="bar"><span class="rk mono">13</span><span class="nm">HRess &amp; Kuyt<em>Gunnar Daníelsson</em></span><span class="track"><span class="fill" style="width:51.4%"></span></span><span class="val">38</span><span></span></div>
+    <div class="bar"><span class="rk mono">14</span><span class="nm">RU Winning Yet?<em>Árni Steinar Stefánsson</em></span><span class="track"><span class="fill" style="width:50.0%"></span></span><span class="val">37</span><span></span></div>
+    <div class="bar"><span class="rk mono">15</span><span class="nm">Ni! United<em>Freyr Halldórsson</em></span><span class="track"><span class="fill" style="width:45.9%"></span></span><span class="val">34</span><span></span></div>
+    <div class="bar"><span class="rk mono">16</span><span class="nm">Sveinatunga FC<em>Jóhann G. Stefánsson</em></span><span class="track"><span class="fill" style="width:37.8%"></span></span><span class="val">28</span><span></span></div>
+  </div>
+  <div class="legend">
+    <span class="item"><i class="sw claret"></i>League leader</span>
+    <span class="item"><i class="sw gold"></i>Everyone else</span>
+    <span class="item"><span class="tag bb">BB</span>Bench Boost played</span>
+  </div>
+  <p class="note"><strong>Three managers spent their Bench Boost in Gameweek 1.</strong> Kristinn's added 22 points and won him the week; strip the chips out and the eleven that actually played tell a different story &mdash; David's DWLFC scored 61 from its starting XI, Kristinn's scored 52, and Jóhann's F10 scored 41. On merit alone, David won Gameweek 1.</p>
+</section>
+
+<section>
+  <div class="sec-head"><span class="n">04</span><h2>The league's XI</h2><span class="aside">Most-selected player in every position</span></div>
+  <div class="pitchwrap">
+    <div class="pitch" role="img" aria-label="Football pitch showing the most-selected player in each position and their gameweek 1 score">
+      <div class="line"><div class="plr"><b>Haaland</b><span>MCI &middot; 12/16</span><u class="lo">2</u></div><div class="plr"><b>João Pedro</b><span>CHE &middot; 9/16</span><u class="hi">11</u></div></div>
+      <div class="line">
+        <div class="plr"><b>Szoboszlai</b><span>LIV &middot; 10/16</span><u class="hi">8</u></div>
+        <div class="plr"><b>Mbeumo</b><span>MUN &middot; 8/16</span><u class="lo">2</u></div>
+        <div class="plr"><b>Semenyo</b><span>MCI &middot; 7/16</span><u class="lo">2</u></div>
+        <div class="plr"><b>B.Fernandes</b><span>MUN &middot; 5/16</span><u class="lo">2</u></div>
+        <div class="plr"><b>Gibbs-White</b><span>NFO &middot; 5/16</span><u class="lo">2</u></div>
+      </div>
+      <div class="line">
+        <div class="plr"><b>Calafiori</b><span>ARS &middot; 7/16</span><u class="hi">9</u></div>
+        <div class="plr"><b>Gabriel</b><span>ARS &middot; 6/16</span><u>5</u></div>
+        <div class="plr"><b>Maguire</b><span>MUN &middot; 4/16</span><u class="lo">1</u></div>
+      </div>
+      <div class="line"><div class="plr"><b>Raya</b><span>ARS &middot; 5/16</span><u>6</u></div></div>
+    </div>
+    <div class="xi-side">
+      <div class="kpi"><span class="k">Template XI total</span><span class="v">50</span></div>
+      <p>Build the eleven players your colleagues picked most often and you get <strong>exactly 50 points</strong> &mdash; the global gameweek average, to the point.</p>
+      <p>The five midfielders in it scored 16 between them. The eight most-owned players in the whole league returned <strong>40 points combined</strong> &mdash; roughly what one good captain does on his own.</p>
+      <p>Everything above 50 in this league came from somewhere other than the crowd.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="sec-head"><span class="n">05</span><h2>Most-owned players</h2><span class="aside">Share of 16 squads</span></div>
+  <div class="chart">
+    <div class="bar own"><span class="nm">Haaland<em>Man City</em></span><span class="pos mono">FWD</span><span class="track"><span class="fill" style="width:75%"></span></span><span class="score bad">2</span><span class="pct">75%</span></div>
+    <div class="bar own"><span class="nm">Szoboszlai<em>Liverpool</em></span><span class="pos mono">MID</span><span class="track"><span class="fill" style="width:62.5%"></span></span><span class="score good">8</span><span class="pct">62%</span></div>
+    <div class="bar own"><span class="nm">João Pedro<em>Chelsea</em></span><span class="pos mono">FWD</span><span class="track"><span class="fill" style="width:56.25%"></span></span><span class="score good">11</span><span class="pct">56%</span></div>
+    <div class="bar own"><span class="nm">Mbeumo<em>Man Utd</em></span><span class="pos mono">MID</span><span class="track"><span class="fill" style="width:50%"></span></span><span class="score bad">2</span><span class="pct">50%</span></div>
+    <div class="bar own"><span class="nm">Calafiori<em>Arsenal</em></span><span class="pos mono">DEF</span><span class="track"><span class="fill" style="width:43.75%"></span></span><span class="score good">9</span><span class="pct">44%</span></div>
+    <div class="bar own"><span class="nm">Calvert-Lewin<em>Leeds</em></span><span class="pos mono">FWD</span><span class="track"><span class="fill" style="width:43.75%"></span></span><span class="score bad">1</span><span class="pct">44%</span></div>
+    <div class="bar own"><span class="nm">Semenyo<em>Man City</em></span><span class="pos mono">MID</span><span class="track"><span class="fill" style="width:43.75%"></span></span><span class="score bad">2</span><span class="pct">44%</span></div>
+    <div class="bar own"><span class="nm">Gabriel<em>Arsenal</em></span><span class="pos mono">DEF</span><span class="track"><span class="fill" style="width:37.5%"></span></span><span class="score">5</span><span class="pct">38%</span></div>
+    <div class="bar own"><span class="nm">B.Fernandes<em>Man Utd</em></span><span class="pos mono">MID</span><span class="track"><span class="fill" style="width:31.25%"></span></span><span class="score bad">2</span><span class="pct">31%</span></div>
+    <div class="bar own"><span class="nm">Verbruggen<em>Brighton</em></span><span class="pos mono">GKP</span><span class="track"><span class="fill" style="width:31.25%"></span></span><span class="score good">6</span><span class="pct">31%</span></div>
+    <div class="bar own"><span class="nm">Gibbs-White<em>Forest</em></span><span class="pos mono">MID</span><span class="track"><span class="fill" style="width:31.25%"></span></span><span class="score bad">2</span><span class="pct">31%</span></div>
+    <div class="bar own"><span class="nm">Raya<em>Arsenal</em></span><span class="pos mono">GKP</span><span class="track"><span class="fill" style="width:31.25%"></span></span><span class="score good">6</span><span class="pct">31%</span></div>
+  </div>
+  <div class="legend">
+    <span class="item"><span class="score good" style="padding:2px 7px">6+</span>Returned</span>
+    <span class="item"><span class="score" style="padding:2px 7px">5</span>Middling</span>
+    <span class="item"><span class="score bad" style="padding:2px 7px">&le;2</span>Blank</span>
+  </div>
+  <p class="note">Only <strong>four</strong> players are owned by half the league or more. Six of the twelve names above returned two points or fewer. The two goalkeepers in the list &mdash; Verbruggen and Raya &mdash; outscored Haaland, Mbeumo, Semenyo, Bruno and Gibbs-White combined.</p>
+</section>
+
+<section>
+  <div class="sec-head"><span class="n">06</span><h2>Gameweek 1 awards</h2></div>
+  <div class="cards">
+    <div class="card">
+      <span class="k">Player of the week</span>
+      <h3>Mendy</h3>
+      <span class="sub">Hull City &middot; defender &middot; 63 minutes</span>
+      <span class="num">15</span>
+      <p>The highest score anyone in this league owned &mdash; and Elísabet was the only person who owned him. He is also the <em>only</em> Hull City player in all 240 picks.</p>
+    </div>
+    <div class="card">
+      <span class="k">Best captain call</span>
+      <h3>Ólafur backs João Pedro</h3>
+      <span class="sub">Platelet FC &middot; 22 points from one player</span>
+      <p>One of six managers to look past Haaland, and the only one it worked for. Fifth place, no chip, and 10 points still sat on his bench.</p>
+    </div>
+    <div class="card">
+      <span class="k">Worst seat in the house</span>
+      <h3>Kelleher's seven</h3>
+      <span class="sub">Benched by BEPOOL, Ni! United, RU Winning Yet?</span>
+      <p>Three managers owned Brentford's keeper. Not one of them started him. Ajer's 8 also watched from the bench at Platelet FC.</p>
+    </div>
+    <div class="card">
+      <span class="k">Bench pain</span>
+      <h3>10 points, three times</h3>
+      <span class="sub">Platelet FC &middot; RU Winning Yet? &middot; Ni! United</span>
+      <p>Each left exactly ten points unused. Ólafur's would have taken him to 67 and second place.</p>
+    </div>
+    <div class="card">
+      <span class="k">Strangers</span>
+      <h3>Zero in common</h3>
+      <span class="sub">Kung Pao FC vs BEPOOL</span>
+      <p>Two squads, thirty picks, not a single shared player. They finished one point apart.</p>
+    </div>
+    <div class="card">
+      <span class="k">Separated at birth</span>
+      <h3>Nine shared players</h3>
+      <span class="sub">KMUFC vs Diogo DaLess</span>
+      <p>The most alike pair in the league. Kristinn's Bench Boost is the entire 18-point gap between them.</p>
+    </div>
+    <div class="card">
+      <span class="k">The maverick</span>
+      <h3>Sveinatunga FC</h3>
+      <span class="sub">Shares 1.5 players with the average squad</span>
+      <p>Jóhann Gunnar built the least conventional team in the league. It finished last with 28. Independence is not, in itself, a strategy.</p>
+    </div>
+    <div class="card">
+      <span class="k">Red mist</span>
+      <h3>Matty Cash</h3>
+      <span class="sub">Aston Villa &middot; started by two managers</span>
+      <span class="num" style="color:var(--claret)">&minus;1</span>
+      <p>The only minus score anybody in the league put in their starting eleven. Twice.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="sec-head"><span class="n">07</span><h2>Where the office shops</h2><span class="aside">Player slots per club, all 240 picks</span></div>
+  <div class="chart" role="img" aria-label="Bar chart of how many squad slots each Premier League club occupies across all 16 teams">
+    <div class="bar club"><span class="nm">ARS</span><span class="track"><span class="fill" style="width:100%"></span></span><span class="val">37</span></div>
+    <div class="bar club"><span class="nm">MCI</span><span class="track"><span class="fill" style="width:83.8%"></span></span><span class="val">31</span></div>
+    <div class="bar club"><span class="nm">MUN</span><span class="track"><span class="fill" style="width:62.2%"></span></span><span class="val">23</span></div>
+    <div class="bar club"><span class="nm">LIV</span><span class="track"><span class="fill" style="width:59.5%"></span></span><span class="val">22</span></div>
+    <div class="bar club"><span class="nm">CHE</span><span class="track"><span class="fill" style="width:48.6%"></span></span><span class="val">18</span></div>
+    <div class="bar club"><span class="nm">TOT</span><span class="track"><span class="fill" style="width:45.9%"></span></span><span class="val">17</span></div>
+    <div class="bar club"><span class="nm">BRE</span><span class="track"><span class="fill" style="width:32.4%"></span></span><span class="val">12</span></div>
+    <div class="bar club"><span class="nm">IPS</span><span class="track"><span class="fill" style="width:29.7%"></span></span><span class="val">11</span></div>
+    <div class="bar club"><span class="nm">NFO</span><span class="track"><span class="fill" style="width:27.0%"></span></span><span class="val">10</span></div>
+    <div class="bar club"><span class="nm">LEE</span><span class="track"><span class="fill" style="width:21.6%"></span></span><span class="val">8</span></div>
+    <div class="bar club"><span class="nm">BHA</span><span class="track"><span class="fill" style="width:21.6%"></span></span><span class="val">8</span></div>
+    <div class="bar club"><span class="nm">EVE</span><span class="track"><span class="fill" style="width:18.9%"></span></span><span class="val">7</span></div>
+    <div class="bar club"><span class="nm">BOU</span><span class="track"><span class="fill" style="width:18.9%"></span></span><span class="val">7</span></div>
+    <div class="bar club"><span class="nm">CRY</span><span class="track"><span class="fill" style="width:18.9%"></span></span><span class="val">7</span></div>
+    <div class="bar club"><span class="nm">SUN</span><span class="track"><span class="fill" style="width:16.2%"></span></span><span class="val">6</span></div>
+    <div class="bar club"><span class="nm">AVL</span><span class="track"><span class="fill" style="width:13.5%"></span></span><span class="val">5</span></div>
+    <div class="bar club"><span class="nm">COV</span><span class="track"><span class="fill" style="width:10.8%"></span></span><span class="val">4</span></div>
+    <div class="bar club"><span class="nm">FUL</span><span class="track"><span class="fill" style="width:8.1%"></span></span><span class="val">3</span></div>
+    <div class="bar club"><span class="nm">NEW</span><span class="track"><span class="fill" style="width:8.1%"></span></span><span class="val">3</span></div>
+    <div class="bar club hl"><span class="nm">HUL</span><span class="track"><span class="fill" style="width:2.7%"></span></span><span class="val">1</span></div>
+  </div>
+  <p class="note">Arsenal and Man City take <strong>28%</strong> of every squad slot in the league between them. Hull City get one &mdash; and he was the highest-scoring player anybody owned. Newcastle and Fulham manage three each; nobody was left out entirely.</p>
+</section>
+
+<section>
+  <div class="sec-head"><span class="n">08</span><h2>Full table</h2></div>
+  <details open>
+    <summary>Gameweek 1, every manager</summary>
+    <div class="tablescroll">
+      <table class="full">
+        <thead><tr><th>#</th><th>Team</th><th>Manager</th><th class="n">Pts</th><th class="n">XI only</th><th class="n">Bench</th><th>Chip</th><th>Captain</th><th>Top scorer</th></tr></thead>
+        <tbody>
+          <tr><td>1</td><td>KMUFC</td><td>Kristinn Magnússon</td><td class="n">74</td><td class="n">52</td><td class="n">&mdash;</td><td>Bench Boost</td><td>B.Fernandes</td><td>João Pedro 11</td></tr>
+          <tr><td>2</td><td>DWLFC</td><td>David Lentz</td><td class="n">68</td><td class="n">61</td><td class="n">&mdash;</td><td>Bench Boost</td><td>Haaland</td><td>João Pedro 11</td></tr>
+          <tr><td>3</td><td>Fav of Ippa</td><td>Elísabet Jóhannesdóttir</td><td class="n">59</td><td class="n">59</td><td class="n">7</td><td>&mdash;</td><td>Thiago</td><td>Mendy 15</td></tr>
+          <tr><td>4</td><td>Kung Pao FC</td><td>Sai Krishna Padamata</td><td class="n">58</td><td class="n">58</td><td class="n">1</td><td>&mdash;</td><td>Haaland</td><td>Palmer 13</td></tr>
+          <tr><td>5</td><td>Platelet FC</td><td>Ólafur E. Sigurjónsson</td><td class="n">57</td><td class="n">57</td><td class="n">10</td><td>&mdash;</td><td>João Pedro</td><td>João Pedro 22</td></tr>
+          <tr><td>6</td><td>BEPOOL</td><td>Björn Þór Jónsson</td><td class="n">56</td><td class="n">56</td><td class="n">9</td><td>&mdash;</td><td>Isak</td><td>Guéhi 10</td></tr>
+          <tr><td>6</td><td>Diogo DaLess</td><td>Pétur Marin Jónsson</td><td class="n">56</td><td class="n">56</td><td class="n">7</td><td>&mdash;</td><td>Haaland</td><td>Ødegaard 11</td></tr>
+          <tr><td>8</td><td>F10</td><td>Jóhann Hjartarson</td><td class="n">47</td><td class="n">41</td><td class="n">&mdash;</td><td>Bench Boost</td><td>Haaland</td><td>João Pedro 11</td></tr>
+          <tr><td>8</td><td>Excel Lent</td><td>Bryndís Kristinsdóttir</td><td class="n">47</td><td class="n">47</td><td class="n">1</td><td>&mdash;</td><td>Haaland</td><td>Ødegaard 11</td></tr>
+          <tr><td>10</td><td>EkitikiTaka</td><td>Hjördís Hreinsdóttir</td><td class="n">45</td><td class="n">45</td><td class="n">6</td><td>&mdash;</td><td>Semenyo</td><td>João Pedro 11</td></tr>
+          <tr><td>10</td><td>Werder Beermen</td><td>Magnús Gíslason</td><td class="n">45</td><td class="n">45</td><td class="n">2</td><td>&mdash;</td><td>Haaland</td><td>Calafiori 9</td></tr>
+          <tr><td>12</td><td>Destiny's child</td><td>Baldur Páll Guðmundsson</td><td class="n">39</td><td class="n">39</td><td class="n">2</td><td>&mdash;</td><td>Haaland</td><td>João Pedro 11</td></tr>
+          <tr><td>13</td><td>HRess &amp; Kuyt</td><td>Gunnar Daníelsson</td><td class="n">38</td><td class="n">38</td><td class="n">4</td><td>&mdash;</td><td>Haaland</td><td>Calafiori 9</td></tr>
+          <tr><td>14</td><td>RU Winning Yet?</td><td>Árni Steinar Stefánsson</td><td class="n">37</td><td class="n">37</td><td class="n">10</td><td>&mdash;</td><td>Haaland</td><td>Dewsbury-Hall 11</td></tr>
+          <tr><td>15</td><td>Ni! United</td><td>Freyr Halldórsson</td><td class="n">34</td><td class="n">34</td><td class="n">10</td><td>&mdash;</td><td>Haaland</td><td>Guéhi 10</td></tr>
+          <tr><td>16</td><td>Sveinatunga FC</td><td>Jóhann G. Stefánsson</td><td class="n">28</td><td class="n">28</td><td class="n">2</td><td>&mdash;</td><td>Wirtz</td><td>Saka 9</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </details>
+  <p class="note"><strong>XI only</strong> strips the Bench Boost back out: it is what the eleven starters scored, captain included. <strong>Bench</strong> is points left unused by managers who did not play the chip.</p>
+</section>
+
+<footer>
+  <p>Built from the official Fantasy Premier League API: classic league 813742 standings and each manager's Gameweek 1 picks, cross-referenced against the player database pulled 25 August 2026. Every squad's calculated total was checked against the score the game reports &mdash; all sixteen match exactly.</p>
+  <p class="mono">HR DEILDIN &middot; GAMEWEEK 1 &middot; 2026/27 &middot; LEAGUE AVERAGE 49.2 &middot; GLOBAL AVERAGE 50 &middot; GLOBAL HIGH 131</p>
+</footer>
+</div>
+</div>
+
+<div class="gwpanel" id="gw2" role="tabpanel" aria-labelledby="tab-gw2">
+<div class="wrap">
+<header class="masthead">
+  <div class="mast-top">
+    <div class="crest"><span class="badge">HR</span><span class="eyebrow">HR Deildin &middot; Fantasy Premier League 2026/27</span></div>
+    <span class="eyebrow">League 813742</span>
+  </div>
+  <h1><span class="thin">Gameweek Two</span>One Armband<br>Got It Right</h1>
+  <p class="standfirst">Bruno Fernandes scored 23 &mdash; the best score of the entire gameweek, anywhere. Fifteen managers in this league didn't captain him. The sixteenth now leads by thirty-five points.</p>
+  <div class="mast-meta">
+    <span>16 managers</span><span>110 different players</span><span>10 transfers</span><span>2 hits taken</span><span>0 chips played</span><span>Data 31 Aug 2026</span>
+  </div>
+</header>
+
+<section>
+  <div class="sec-head"><span class="n">01</span><h2>The week in five numbers</h2></div>
+  <div class="tiles">
+    <div class="tile hero">
+      <span class="k">Winning score</span>
+      <span class="v">108</span>
+      <span class="d">Kristinn (KMUFC), for the second week running. The global high was 161.</span>
+    </div>
+    <div class="tile">
+      <span class="k">League average</span>
+      <span class="v">75.6</span>
+      <span class="d">The worldwide average was 79. The office fell behind the world this week.</span>
+    </div>
+    <div class="tile">
+      <span class="k">Lead at the top</span>
+      <span class="v">35<small>pts</small></span>
+      <span class="d">182 plays 147. After two gameweeks, this is already a big gap.</span>
+    </div>
+    <div class="tile">
+      <span class="k">Points left on benches</span>
+      <span class="v">134</span>
+      <span class="d">Across sixteen squads, with nobody playing a chip. Average 8.4 per manager.</span>
+    </div>
+    <div class="tile">
+      <span class="k">Transfers made</span>
+      <span class="v">10</span>
+      <span class="d">Eight managers didn't touch their team at all. Two paid 4 points for the privilege.</span>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="sec-head"><span class="n">02</span><h2>The Bruno week</h2><span class="aside">Owned by 5, captained by 1</span></div>
+  <div class="feature">
+    <div class="big">
+      <span class="num">23</span>
+      <span class="cap">Points scored by Bruno Fernandes</span>
+    </div>
+    <div class="body">
+      <h3>The best player in the world, on five teams</h3>
+      <p>Bruno was the highest-scoring player in the entire game in Gameweek 2. Five managers in HR Deildin owned him, and all five started him. Exactly one gave him the armband &mdash; and it turned 23 points into <strong>46</strong>.</p>
+      <div class="armband" role="img" aria-label="One gold armband for Bruno Fernandes, eight claret for Haaland, seven for others">
+        <i class="gold"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+      </div>
+      <p class="armband-key">1 Bruno (gold) &middot; 8 Haaland (claret) &middot; 7 elsewhere: João Pedro &times;3, Saka, Semenyo, Szoboszlai, Thiago.</p>
+      <p>Haaland's eight backers weren't punished &mdash; 13 points, 26 with the armband, a perfectly decent week. But Kristinn banked 20 more from the same decision, and that is the whole story of the gameweek. Second-best call: Jóhann Gunnar's <strong>Saka</strong> at 11 (22 doubled) &mdash; from bottom of the table.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="sec-head"><span class="n">03</span><h2>Gameweek 2 scores</h2><span class="aside">Movement shown against GW1 position</span></div>
+  <div class="chart" role="img" aria-label="Bar chart of gameweek 2 scores, from KMUFC on 108 down to Excel Lent on 56">
+    <div class="bar hl"><span class="rk mono">1</span><span class="nm">KMUFC<em>Kristinn Magnússon</em></span><span class="track"><span class="fill" style="width:100%"></span></span><span class="val">108</span><span class="mv">&mdash;</span></div>
+    <div class="bar"><span class="rk mono">2</span><span class="nm">Ni! United<em>Freyr Halldórsson</em></span><span class="track"><span class="fill" style="width:82.4%"></span></span><span class="val">89</span><span class="mv up">&#9650;7</span></div>
+    <div class="bar"><span class="rk mono">3</span><span class="nm">Werder Beermen<em>Magnús Gíslason</em></span><span class="track"><span class="fill" style="width:77.8%"></span></span><span class="val">84</span><span class="mv up">&#9650;4</span></div>
+    <div class="bar"><span class="rk mono">4</span><span class="nm">HRess &amp; Kuyt<em>Gunnar Daníelsson</em></span><span class="track"><span class="fill" style="width:75.9%"></span></span><span class="val">82</span><span class="mv up">&#9650;4</span></div>
+    <div class="bar"><span class="rk mono">4</span><span class="nm">RU Winning Yet?<em>Árni Steinar Stefánsson</em></span><span class="track"><span class="fill" style="width:75.9%"></span></span><span class="val">82</span><span class="mv up">&#9650;4</span></div>
+    <div class="bar"><span class="rk mono">6</span><span class="nm">DWLFC<em>David Lentz</em></span><span class="track"><span class="fill" style="width:73.1%"></span></span><span class="val">79</span><span class="mv">&mdash;</span></div>
+    <div class="bar"><span class="rk mono">7</span><span class="nm">Destiny's child<em>Baldur Páll Guðmundsson</em></span><span class="track"><span class="fill" style="width:72.2%"></span></span><span class="val">78</span><span class="mv down">&#9660;2</span></div>
+    <div class="bar"><span class="rk mono">8</span><span class="nm">Fav of Ippa<em>Elísabet Jóhannesdóttir</em></span><span class="track"><span class="fill" style="width:69.4%"></span></span><span class="val">75</span><span class="mv">&mdash;</span></div>
+    <div class="bar"><span class="rk mono">8</span><span class="nm">Platelet FC<em>Ólafur E. Sigurjónsson</em></span><span class="track"><span class="fill" style="width:69.4%"></span></span><span class="val">75</span><span class="mv up">&#9650;1</span></div>
+    <div class="bar"><span class="rk mono">8</span><span class="nm">Diogo DaLess<em>Pétur Marin Jónsson</em></span><span class="track"><span class="fill" style="width:69.4%"></span></span><span class="val">75</span><span class="mv up">&#9650;1</span></div>
+    <div class="bar"><span class="rk mono">11</span><span class="nm">Kung Pao FC<em>Sai Krishna Padamata</em></span><span class="track"><span class="fill" style="width:65.7%"></span></span><span class="val">71</span><span class="mv down">&#9660;2</span></div>
+    <div class="bar"><span class="rk mono">11</span><span class="nm">F10<em>Jóhann Hjartarson</em></span><span class="track"><span class="fill" style="width:65.7%"></span></span><span class="val">71</span><span class="mv down">&#9660;4</span></div>
+    <div class="bar"><span class="rk mono">13</span><span class="nm">EkitikiTaka<em>Hjördís Hreinsdóttir</em></span><span class="track"><span class="fill" style="width:63.9%"></span></span><span class="val">69</span><span class="mv down">&#9660;1</span></div>
+    <div class="bar"><span class="rk mono">14</span><span class="nm">Sveinatunga FC<em>Jóhann G. Stefánsson</em></span><span class="track"><span class="fill" style="width:53.7%"></span></span><span class="val">58</span><span class="mv">&mdash;</span></div>
+    <div class="bar"><span class="rk mono">15</span><span class="nm">BEPOOL<em>Björn Þór Jónsson</em></span><span class="track"><span class="fill" style="width:52.8%"></span></span><span class="val">57</span><span class="mv down">&#9660;7</span></div>
+    <div class="bar"><span class="rk mono">16</span><span class="nm">Excel Lent<em>Bryndís Kristinsdóttir</em></span><span class="track"><span class="fill" style="width:51.9%"></span></span><span class="val">56</span><span class="mv down">&#9660;7</span></div>
+  </div>
+  <div class="legend">
+    <span class="item"><i class="sw claret"></i>Gameweek winner</span>
+    <span class="item"><i class="sw gold"></i>Everyone else</span>
+    <span class="item"><span class="mv up">&#9650;</span>Season places gained</span>
+    <span class="item"><span class="mv down">&#9660;</span>Places lost</span>
+  </div>
+  <p class="note">Scores here are before transfer costs. <strong>F10 and Destiny's child each paid 4</strong>, so their weeks are really 67 and 74. Top-to-bottom spread widened from 46 points in GW1 to 52 &mdash; this league is not settling down.</p>
+</section>
+
+<section>
+  <div class="sec-head"><span class="n">04</span><h2>Season standings</h2><span class="aside">After two gameweeks</span></div>
+  <div class="chart" role="img" aria-label="Bar chart of season totals after two gameweeks, from KMUFC on 182 down to Sveinatunga FC on 86">
+    <div class="bar hl"><span class="rk mono">1</span><span class="nm">KMUFC<em>Kristinn Magnússon</em></span><span class="track"><span class="fill" style="width:100%"></span></span><span class="val">182</span><span class="mv">&mdash;</span></div>
+    <div class="bar"><span class="rk mono">2</span><span class="nm">DWLFC<em>David Lentz</em></span><span class="track"><span class="fill" style="width:80.8%"></span></span><span class="val">147</span><span class="mv">&mdash;</span></div>
+    <div class="bar"><span class="rk mono">3</span><span class="nm">Fav of Ippa<em>Elísabet Jóhannesdóttir</em></span><span class="track"><span class="fill" style="width:73.6%"></span></span><span class="val">134</span><span class="mv">&mdash;</span></div>
+    <div class="bar"><span class="rk mono">4</span><span class="nm">Platelet FC<em>Ólafur E. Sigurjónsson</em></span><span class="track"><span class="fill" style="width:72.5%"></span></span><span class="val">132</span><span class="mv up">&#9650;1</span></div>
+    <div class="bar"><span class="rk mono">5</span><span class="nm">Diogo DaLess<em>Pétur Marin Jónsson</em></span><span class="track"><span class="fill" style="width:72.0%"></span></span><span class="val">131</span><span class="mv up">&#9650;1</span></div>
+    <div class="bar"><span class="rk mono">6</span><span class="nm">Werder Beermen<em>Magnús Gíslason</em></span><span class="track"><span class="fill" style="width:70.9%"></span></span><span class="val">129</span><span class="mv up">&#9650;4</span></div>
+    <div class="bar"><span class="rk mono">6</span><span class="nm">Kung Pao FC<em>Sai Krishna Padamata</em></span><span class="track"><span class="fill" style="width:70.9%"></span></span><span class="val">129</span><span class="mv down">&#9660;2</span></div>
+    <div class="bar"><span class="rk mono">8</span><span class="nm">Ni! United<em>Freyr Halldórsson</em></span><span class="track"><span class="fill" style="width:67.6%"></span></span><span class="val">123</span><span class="mv up">&#9650;7</span></div>
+    <div class="bar"><span class="rk mono">9</span><span class="nm">HRess &amp; Kuyt<em>Gunnar Daníelsson</em></span><span class="track"><span class="fill" style="width:65.9%"></span></span><span class="val">120</span><span class="mv up">&#9650;4</span></div>
+    <div class="bar"><span class="rk mono">10</span><span class="nm">RU Winning Yet?<em>Árni Steinar Stefánsson</em></span><span class="track"><span class="fill" style="width:65.4%"></span></span><span class="val">119</span><span class="mv up">&#9650;4</span></div>
+    <div class="bar"><span class="rk mono">11</span><span class="nm">EkitikiTaka<em>Hjördís Hreinsdóttir</em></span><span class="track"><span class="fill" style="width:62.6%"></span></span><span class="val">114</span><span class="mv down">&#9660;1</span></div>
+    <div class="bar"><span class="rk mono">12</span><span class="nm">F10<em>Jóhann Hjartarson</em></span><span class="track"><span class="fill" style="width:62.6%"></span></span><span class="val">114</span><span class="mv down">&#9660;4</span></div>
+    <div class="bar"><span class="rk mono">13</span><span class="nm">BEPOOL<em>Björn Þór Jónsson</em></span><span class="track"><span class="fill" style="width:62.1%"></span></span><span class="val">113</span><span class="mv down">&#9660;7</span></div>
+    <div class="bar"><span class="rk mono">14</span><span class="nm">Destiny's child<em>Baldur Páll Guðmundsson</em></span><span class="track"><span class="fill" style="width:62.1%"></span></span><span class="val">113</span><span class="mv down">&#9660;2</span></div>
+    <div class="bar"><span class="rk mono">15</span><span class="nm">Excel Lent<em>Bryndís Kristinsdóttir</em></span><span class="track"><span class="fill" style="width:56.6%"></span></span><span class="val">103</span><span class="mv down">&#9660;7</span></div>
+    <div class="bar"><span class="rk mono">16</span><span class="nm">Sveinatunga FC<em>Jóhann G. Stefánsson</em></span><span class="track"><span class="fill" style="width:47.3%"></span></span><span class="val">86</span><span class="mv">&mdash;</span></div>
+  </div>
+  <p class="note">The top three held. Everything from fourth to fifteenth reshuffled: eleven of sixteen managers changed position. <strong>Freyr's Ni! United climbed seven places</strong> on the back of 89 points; <strong>BEPOOL and Excel Lent both fell seven</strong>. Places 6 through 14 are separated by 16 points &mdash; one good captain.</p>
+</section>
+
+<section>
+  <div class="sec-head"><span class="n">05</span><h2>The transfer market</h2><span class="aside">Every deal in the league</span></div>
+  <div class="ledger">
+    <table>
+      <thead><tr><th>Manager</th><th>Out</th><th></th><th>In</th><th class="n">Out pts</th><th class="n">In pts</th><th class="n">Swing</th></tr></thead>
+      <tbody>
+        <tr><td>Diogo DaLess</td><td>Sarr</td><td class="arrow">&rarr;</td><td>M.Sangaré</td><td class="n">0</td><td class="n">4</td><td class="n plus">+4</td></tr>
+        <tr><td>Destiny's child</td><td>Enzo</td><td class="arrow">&rarr;</td><td>Tzolis</td><td class="n">0</td><td class="n">0</td><td class="n">0</td></tr>
+        <tr><td>Ni! United</td><td>Anderson</td><td class="arrow">&rarr;</td><td>Ødegaard</td><td class="n">3</td><td class="n">3</td><td class="n">0</td></tr>
+        <tr><td>BEPOOL</td><td>Anderson</td><td class="arrow">&rarr;</td><td>M.Sangaré</td><td class="n">3</td><td class="n">4</td><td class="n plus">+1</td></tr>
+        <tr><td>RU Winning Yet?</td><td>Beto</td><td class="arrow">&rarr;</td><td>Barry</td><td class="n">1</td><td class="n">2</td><td class="n plus">+1</td></tr>
+        <tr><td>Destiny's child</td><td>Beto</td><td class="arrow">&rarr;</td><td>Barry</td><td class="n">1</td><td class="n">2</td><td class="n plus">+1</td></tr>
+        <tr><td>HRess &amp; Kuyt</td><td>Cash</td><td class="arrow">&rarr;</td><td>De Cuyper</td><td class="n">2</td><td class="n">0</td><td class="n minus">&minus;2</td></tr>
+        <tr><td>F10</td><td>Tonali</td><td class="arrow">&rarr;</td><td>Sávio</td><td class="n">2</td><td class="n">0</td><td class="n minus">&minus;2</td></tr>
+        <tr><td>Platelet FC</td><td>Mbeumo</td><td class="arrow">&rarr;</td><td>Rogers</td><td class="n">11</td><td class="n">5</td><td class="n minus">&minus;6</td></tr>
+        <tr><td>F10</td><td>Calvert-Lewin</td><td class="arrow">&rarr;</td><td>Wilson</td><td class="n">8</td><td class="n">1</td><td class="n minus">&minus;7</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="swing">
+    <div class="card">
+      <span class="k">Most transferred in</span>
+      <h3>Barry &amp; M.Sangaré</h3>
+      <span class="sub">Two managers each &middot; 2 and 4 points</span>
+      <p>Nothing in this league was a consensus. The most popular move was bought by exactly two of sixteen people, and returned single figures.</p>
+    </div>
+    <div class="card">
+      <span class="k">Most transferred out</span>
+      <h3>Beto &amp; Anderson</h3>
+      <span class="sub">Two managers each &middot; 1 and 3 points</span>
+      <p>Both correctly shipped. The only two players the league agreed to get rid of, and neither did anything afterwards.</p>
+    </div>
+    <div class="card">
+      <span class="k">Worst week at the desk</span>
+      <h3>F10</h3>
+      <span class="sub">Two transfers &middot; &minus;4 hit</span>
+      <span class="num" style="color:var(--claret)">&minus;13</span>
+      <p>Jóhann sold Calvert-Lewin (8) and Tonali (2) to buy Wilson (1) and Sávio (0), and paid 4 points for it. He also left Groß's 13 on the bench. From 8th to 12th.</p>
+    </div>
+    <div class="card">
+      <span class="k">The doing-nothing dividend</span>
+      <h3>Eight stood still</h3>
+      <span class="sub">Half the league made no transfer</span>
+      <p>The eight who traded averaged <strong>75.1</strong> after hits. The eight who did nothing averaged <strong>75.0</strong>. Ten transfers, one net point, across the entire league.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="sec-head"><span class="n">06</span><h2>The league's XI</h2><span class="aside">Most-started player in every position</span></div>
+  <div class="pitchwrap">
+    <div class="pitch" role="img" aria-label="Football pitch showing the most-started player in each position and their gameweek 2 score">
+      <div class="line"><div class="plr"><b>Haaland</b><span>MCI &middot; 12/16</span><u class="hi">13</u></div><div class="plr"><b>João Pedro</b><span>CHE &middot; 9/16</span><u>9</u></div></div>
+      <div class="line">
+        <div class="plr"><b>Szoboszlai</b><span>LIV &middot; 10/16</span><u class="lo">4</u></div>
+        <div class="plr"><b>Mbeumo</b><span>MUN &middot; 7/16</span><u class="hi">11</u></div>
+        <div class="plr"><b>Semenyo</b><span>MCI &middot; 7/16</span><u class="lo">5</u></div>
+        <div class="plr"><b>B.Fernandes</b><span>MUN &middot; 5/16</span><u class="hi">23</u></div>
+        <div class="plr"><b>Tzolis</b><span>ARS &middot; 5/16</span><u class="lo">0</u></div>
+      </div>
+      <div class="line">
+        <div class="plr"><b>Calafiori</b><span>ARS &middot; 7/16</span><u class="hi">11</u></div>
+        <div class="plr"><b>Gabriel</b><span>ARS &middot; 6/16</span><u>8</u></div>
+        <div class="plr"><b>Maguire</b><span>MUN &middot; 4/16</span><u class="lo">4</u></div>
+      </div>
+      <div class="line"><div class="plr"><b>Raya</b><span>ARS &middot; 5/16</span><u>6</u></div></div>
+    </div>
+    <div class="xi-side">
+      <div class="kpi"><span class="k">Template XI total</span><span class="v">94</span></div>
+      <p>Build the eleven your colleagues start most often and you'd have scored <strong>94</strong> &mdash; comfortably above the global average of 79, and better than fifteen of the sixteen actual teams.</p>
+      <p>Last week the same exercise produced exactly 50, the global average to the point. The difference is one player: Bruno's 23 has entered the template and dragged it up.</p>
+      <p>The lesson from GW1 was that the crowd was wrong. The lesson from GW2 is that the crowd was right and most people still underperformed it &mdash; because of who they benched.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="sec-head"><span class="n">07</span><h2>Best players in the league</h2><span class="aside">Gameweek 2 points, of players somebody owned</span></div>
+  <div class="chart">
+    <div class="bar own"><span class="nm">B.Fernandes<em>Man Utd</em></span><span class="pos mono">MID</span><span class="track"><span class="fill" style="width:100%"></span></span><span class="score good">23</span><span class="pct">5/16</span></div>
+    <div class="bar own"><span class="nm">Haaland<em>Man City</em></span><span class="pos mono">FWD</span><span class="track"><span class="fill" style="width:56.5%"></span></span><span class="score good">13</span><span class="pct">12/16</span></div>
+    <div class="bar own"><span class="nm">Gibbs-White<em>Forest</em></span><span class="pos mono">MID</span><span class="track"><span class="fill" style="width:56.5%"></span></span><span class="score good">13</span><span class="pct">5/16</span></div>
+    <div class="bar own"><span class="nm">Groß<em>Brighton</em></span><span class="pos mono">MID</span><span class="track"><span class="fill" style="width:56.5%"></span></span><span class="score good">13</span><span class="pct">2/16</span></div>
+    <div class="bar own"><span class="nm">Scott<em>Bournemouth</em></span><span class="pos mono">MID</span><span class="track"><span class="fill" style="width:52.2%"></span></span><span class="score good">12</span><span class="pct">1/16</span></div>
+    <div class="bar own"><span class="nm">Calafiori<em>Arsenal</em></span><span class="pos mono">DEF</span><span class="track"><span class="fill" style="width:47.8%"></span></span><span class="score good">11</span><span class="pct">7/16</span></div>
+    <div class="bar own"><span class="nm">Mbeumo<em>Man Utd</em></span><span class="pos mono">MID</span><span class="track"><span class="fill" style="width:47.8%"></span></span><span class="score good">11</span><span class="pct">7/16</span></div>
+    <div class="bar own"><span class="nm">Saka<em>Arsenal</em></span><span class="pos mono">MID</span><span class="track"><span class="fill" style="width:47.8%"></span></span><span class="score good">11</span><span class="pct">3/16</span></div>
+    <div class="bar own"><span class="nm">João Pedro<em>Chelsea</em></span><span class="pos mono">FWD</span><span class="track"><span class="fill" style="width:39.1%"></span></span><span class="score good">9</span><span class="pct">9/16</span></div>
+    <div class="bar own"><span class="nm">Cunha<em>Man Utd</em></span><span class="pos mono">MID</span><span class="track"><span class="fill" style="width:39.1%"></span></span><span class="score good">9</span><span class="pct">2/16</span></div>
+    <div class="bar own"><span class="nm">Gabriel<em>Arsenal</em></span><span class="pos mono">DEF</span><span class="track"><span class="fill" style="width:34.8%"></span></span><span class="score good">8</span><span class="pct">6/16</span></div>
+    <div class="bar own"><span class="nm">Calvert-Lewin<em>Leeds</em></span><span class="pos mono">FWD</span><span class="track"><span class="fill" style="width:34.8%"></span></span><span class="score good">8</span><span class="pct">6/16</span></div>
+    <div class="bar own"><span class="nm">Isak<em>Liverpool</em></span><span class="pos mono">FWD</span><span class="track"><span class="fill" style="width:34.8%"></span></span><span class="score good">8</span><span class="pct">3/16</span></div>
+    <div class="bar own"><span class="nm">Isidor<em>Sunderland</em></span><span class="pos mono">FWD</span><span class="track"><span class="fill" style="width:34.8%"></span></span><span class="score good">8</span><span class="pct">1/16</span></div>
+  </div>
+  <p class="note">Two of the league's top five scorers &mdash; Groß and Scott &mdash; were owned by two managers or fewer. <strong>Manchester United supplied three of the top ten</strong>: Bruno, Mbeumo and Cunha. United now look badly under-owned in this office, with 22 squad slots against Arsenal's 39.</p>
+</section>
+
+<section>
+  <div class="sec-head"><span class="n">08</span><h2>Most-owned players</h2><span class="aside">Share of 16 squads</span></div>
+  <div class="chart">
+    <div class="bar own"><span class="nm">Haaland<em>Man City</em></span><span class="pos mono">FWD</span><span class="track"><span class="fill" style="width:75%"></span></span><span class="score good">13</span><span class="pct">75%</span></div>
+    <div class="bar own"><span class="nm">Szoboszlai<em>Liverpool</em></span><span class="pos mono">MID</span><span class="track"><span class="fill" style="width:62.5%"></span></span><span class="score bad">4</span><span class="pct">63%</span></div>
+    <div class="bar own"><span class="nm">João Pedro<em>Chelsea</em></span><span class="pos mono">FWD</span><span class="track"><span class="fill" style="width:56.25%"></span></span><span class="score good">9</span><span class="pct">56%</span></div>
+    <div class="bar own"><span class="nm">Calafiori<em>Arsenal</em></span><span class="pos mono">DEF</span><span class="track"><span class="fill" style="width:43.75%"></span></span><span class="score good">11</span><span class="pct">44%</span></div>
+    <div class="bar own"><span class="nm">Mbeumo<em>Man Utd</em></span><span class="pos mono">MID</span><span class="track"><span class="fill" style="width:43.75%"></span></span><span class="score good">11</span><span class="pct">44%</span></div>
+    <div class="bar own"><span class="nm">Semenyo<em>Man City</em></span><span class="pos mono">MID</span><span class="track"><span class="fill" style="width:43.75%"></span></span><span class="score">5</span><span class="pct">44%</span></div>
+    <div class="bar own"><span class="nm">Gabriel<em>Arsenal</em></span><span class="pos mono">DEF</span><span class="track"><span class="fill" style="width:37.5%"></span></span><span class="score good">8</span><span class="pct">38%</span></div>
+    <div class="bar own"><span class="nm">Calvert-Lewin<em>Leeds</em></span><span class="pos mono">FWD</span><span class="track"><span class="fill" style="width:37.5%"></span></span><span class="score good">8</span><span class="pct">38%</span></div>
+    <div class="bar own"><span class="nm">B.Fernandes<em>Man Utd</em></span><span class="pos mono">MID</span><span class="track"><span class="fill" style="width:31.25%"></span></span><span class="score good">23</span><span class="pct">31%</span></div>
+    <div class="bar own"><span class="nm">Gibbs-White<em>Forest</em></span><span class="pos mono">MID</span><span class="track"><span class="fill" style="width:31.25%"></span></span><span class="score good">13</span><span class="pct">31%</span></div>
+    <div class="bar own"><span class="nm">Raya<em>Arsenal</em></span><span class="pos mono">GKP</span><span class="track"><span class="fill" style="width:31.25%"></span></span><span class="score good">6</span><span class="pct">31%</span></div>
+    <div class="bar own"><span class="nm">Verbruggen<em>Brighton</em></span><span class="pos mono">GKP</span><span class="track"><span class="fill" style="width:31.25%"></span></span><span class="score bad">0</span><span class="pct">31%</span></div>
+    <div class="bar own"><span class="nm">Tzolis<em>Arsenal</em></span><span class="pos mono">MID</span><span class="track"><span class="fill" style="width:31.25%"></span></span><span class="score bad">0</span><span class="pct">31%</span></div>
+  </div>
+  <div class="legend">
+    <span class="item"><span class="score good" style="padding:2px 7px">6+</span>Returned</span>
+    <span class="item"><span class="score" style="padding:2px 7px">5</span>Middling</span>
+    <span class="item"><span class="score bad" style="padding:2px 7px">&le;4</span>Blank</span>
+  </div>
+  <p class="note">The league's second-most-owned player, <strong>Szoboszlai, returned 4</strong>. Ten managers own him and one captained him. Meanwhile 110 different players appear across the sixteen squads and <strong>63 of them belong to exactly one manager</strong> &mdash; the office is still picking 15 teams, not one.</p>
+</section>
+
+<section>
+  <div class="sec-head"><span class="n">09</span><h2>Gameweek 2 awards</h2></div>
+  <div class="cards">
+    <div class="card">
+      <span class="k">Manager of the week</span>
+      <h3>KMUFC</h3>
+      <span class="sub">108 points &middot; no transfers &middot; no chip</span>
+      <span class="num">108</span>
+      <p>Second straight gameweek win, this one without touching the team. The armband did all of it: 46 points from Bruno, 62 from the other ten.</p>
+    </div>
+    <div class="card">
+      <span class="k">Climber of the week</span>
+      <h3>Ni! United</h3>
+      <span class="sub">Freyr Halldórsson &middot; 15th to 8th</span>
+      <span class="num">89</span>
+      <p>Last after GW1, second-best score in GW2. Started Bruno without captaining him, brought in Ødegaard, and left only 4 on the bench. Seven places in one week.</p>
+    </div>
+    <div class="card">
+      <span class="k">Bench pain</span>
+      <h3>DWLFC leaves 22</h3>
+      <span class="sub">Gibbs-White 13, and eight more</span>
+      <span class="num" style="color:var(--claret)">22</span>
+      <p>David scored 79 and had 101 sitting in his squad &mdash; the largest bench in the league by seven points, and enough to have taken him within touching distance of the win.</p>
+    </div>
+    <div class="card">
+      <span class="k">Best differential</span>
+      <h3>Alex Scott</h3>
+      <span class="sub">Bournemouth &middot; owned by Platelet FC alone</span>
+      <span class="num">12</span>
+      <p>The highest score in the league owned by exactly one person &mdash; and Ólafur started him. It nearly cancelled out selling Mbeumo.</p>
+    </div>
+    <div class="card">
+      <span class="k">Worst captain call</span>
+      <h3>Szoboszlai for 4</h3>
+      <span class="sub">BEPOOL &middot; 8 points from the armband</span>
+      <p>Björn's 57 was the second-worst score of the week and cost him seven league places. He is one of four managers who don't own Haaland at all, so the armband had to go somewhere &mdash; it went to a 4-point return, with 13 more left on his bench.</p>
+    </div>
+    <div class="card">
+      <span class="k">Silent partners</span>
+      <h3>Verbruggen &amp; Tzolis</h3>
+      <span class="sub">Owned by 5 managers each &middot; 0 points each</span>
+      <p>Two of the league's most popular picks contributed nothing whatsoever. Tzolis was even transferred in this week.</p>
+    </div>
+    <div class="card">
+      <span class="k">Still strangers</span>
+      <h3>Zero in common</h3>
+      <span class="sub">Kung Pao FC vs BEPOOL &middot; Platelet FC vs Sveinatunga</span>
+      <p>Two pairs of squads share not one player out of thirty. Average overlap across the league is 3.1 players &mdash; unchanged from GW1.</p>
+    </div>
+    <div class="card">
+      <span class="k">The maverick, again</span>
+      <h3>Sveinatunga FC</h3>
+      <span class="sub">Shares 1.5 players with the average squad</span>
+      <p>Bottom again, but Jóhann Gunnar had the second-best captain in the league with Saka. The independence is starting to pay something.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="sec-head"><span class="n">10</span><h2>Where the office shops</h2><span class="aside">Player slots per club, all 240 picks</span></div>
+  <div class="chart" role="img" aria-label="Bar chart of how many squad slots each Premier League club occupies across all 16 teams">
+    <div class="bar club"><span class="nm">ARS</span><span class="track"><span class="fill" style="width:100%"></span></span><span class="val">39</span></div>
+    <div class="bar club"><span class="nm">MCI</span><span class="track"><span class="fill" style="width:69.2%"></span></span><span class="val">27</span></div>
+    <div class="bar club"><span class="nm">MUN</span><span class="track"><span class="fill" style="width:56.4%"></span></span><span class="val">22</span></div>
+    <div class="bar club"><span class="nm">LIV</span><span class="track"><span class="fill" style="width:56.4%"></span></span><span class="val">22</span></div>
+    <div class="bar club"><span class="nm">TOT</span><span class="track"><span class="fill" style="width:48.7%"></span></span><span class="val">19</span></div>
+    <div class="bar club"><span class="nm">CHE</span><span class="track"><span class="fill" style="width:43.6%"></span></span><span class="val">17</span></div>
+    <div class="bar club"><span class="nm">BRE</span><span class="track"><span class="fill" style="width:38.5%"></span></span><span class="val">15</span></div>
+    <div class="bar club"><span class="nm">IPS</span><span class="track"><span class="fill" style="width:28.2%"></span></span><span class="val">11</span></div>
+    <div class="bar club"><span class="nm">NFO</span><span class="track"><span class="fill" style="width:25.6%"></span></span><span class="val">10</span></div>
+    <div class="bar club"><span class="nm">BHA</span><span class="track"><span class="fill" style="width:23.1%"></span></span><span class="val">9</span></div>
+    <div class="bar club"><span class="nm">LEE</span><span class="track"><span class="fill" style="width:17.9%"></span></span><span class="val">7</span></div>
+    <div class="bar club"><span class="nm">EVE</span><span class="track"><span class="fill" style="width:17.9%"></span></span><span class="val">7</span></div>
+    <div class="bar club"><span class="nm">BOU</span><span class="track"><span class="fill" style="width:17.9%"></span></span><span class="val">7</span></div>
+    <div class="bar club"><span class="nm">CRY</span><span class="track"><span class="fill" style="width:17.9%"></span></span><span class="val">7</span></div>
+    <div class="bar club"><span class="nm">SUN</span><span class="track"><span class="fill" style="width:15.4%"></span></span><span class="val">6</span></div>
+    <div class="bar club"><span class="nm">COV</span><span class="track"><span class="fill" style="width:10.3%"></span></span><span class="val">4</span></div>
+    <div class="bar club"><span class="nm">AVL</span><span class="track"><span class="fill" style="width:10.3%"></span></span><span class="val">4</span></div>
+    <div class="bar club"><span class="nm">FUL</span><span class="track"><span class="fill" style="width:7.7%"></span></span><span class="val">3</span></div>
+    <div class="bar club"><span class="nm">NEW</span><span class="track"><span class="fill" style="width:7.7%"></span></span><span class="val">3</span></div>
+    <div class="bar club hl"><span class="nm">HUL</span><span class="track"><span class="fill" style="width:2.6%"></span></span><span class="val">1</span></div>
+  </div>
+  <p class="note">Arsenal gained two slots on the week and now take <strong>16% of every squad slot in the league</strong> on their own. Brentford climbed from 12 to 15, Man City fell from 31 to 27. Hull City still get exactly one player, still owned by Elísabet.</p>
+</section>
+
+<section>
+  <div class="sec-head"><span class="n">11</span><h2>Full table</h2></div>
+  <details open>
+    <summary>Gameweek 2, every manager</summary>
+    <div class="tablescroll">
+      <table class="full">
+        <thead><tr><th>#</th><th>Team</th><th>Manager</th><th class="n">GW2</th><th class="n">Hit</th><th class="n">Bench</th><th>Captain</th><th class="n">C pts</th><th>Best owned</th><th class="n">Season</th></tr></thead>
+        <tbody>
+          <tr><td>1</td><td>KMUFC</td><td>Kristinn Magnússon</td><td class="n">108</td><td class="n">&mdash;</td><td class="n">10</td><td>B.Fernandes</td><td class="n">46</td><td>B.Fernandes 23</td><td class="n">182</td></tr>
+          <tr><td>2</td><td>DWLFC</td><td>David Lentz</td><td class="n">79</td><td class="n">&mdash;</td><td class="n">22</td><td>João Pedro</td><td class="n">18</td><td>Haaland 13</td><td class="n">147</td></tr>
+          <tr><td>3</td><td>Fav of Ippa</td><td>Elísabet Jóhannesdóttir</td><td class="n">75</td><td class="n">&mdash;</td><td class="n">1</td><td>Thiago</td><td class="n">4</td><td>B.Fernandes 23</td><td class="n">134</td></tr>
+          <tr><td>4</td><td>Platelet FC</td><td>Ólafur E. Sigurjónsson</td><td class="n">75</td><td class="n">&mdash;</td><td class="n">6</td><td>João Pedro</td><td class="n">18</td><td>Haaland 13</td><td class="n">132</td></tr>
+          <tr><td>5</td><td>Diogo DaLess</td><td>Pétur Marin Jónsson</td><td class="n">75</td><td class="n">&mdash;</td><td class="n">15</td><td>João Pedro</td><td class="n">18</td><td>Haaland 13</td><td class="n">131</td></tr>
+          <tr><td>6</td><td>Werder Beermen</td><td>Magnús Gíslason</td><td class="n">84</td><td class="n">&mdash;</td><td class="n">13</td><td>Haaland</td><td class="n">26</td><td>Haaland 13</td><td class="n">129</td></tr>
+          <tr><td>6</td><td>Kung Pao FC</td><td>Sai Krishna Padamata</td><td class="n">71</td><td class="n">&mdash;</td><td class="n">4</td><td>Haaland</td><td class="n">26</td><td>Haaland 13</td><td class="n">129</td></tr>
+          <tr><td>8</td><td>Ni! United</td><td>Freyr Halldórsson</td><td class="n">89</td><td class="n">&mdash;</td><td class="n">4</td><td>Haaland</td><td class="n">26</td><td>B.Fernandes 23</td><td class="n">123</td></tr>
+          <tr><td>9</td><td>HRess &amp; Kuyt</td><td>Gunnar Daníelsson</td><td class="n">82</td><td class="n">&mdash;</td><td class="n">4</td><td>Haaland</td><td class="n">26</td><td>Gibbs-White 13</td><td class="n">120</td></tr>
+          <tr><td>10</td><td>RU Winning Yet?</td><td>Árni Steinar Stefánsson</td><td class="n">82</td><td class="n">&mdash;</td><td class="n">7</td><td>Haaland</td><td class="n">26</td><td>B.Fernandes 23</td><td class="n">119</td></tr>
+          <tr><td>11</td><td>EkitikiTaka</td><td>Hjördís Hreinsdóttir</td><td class="n">69</td><td class="n">&mdash;</td><td class="n">1</td><td>Semenyo</td><td class="n">10</td><td>Gibbs-White 13</td><td class="n">114</td></tr>
+          <tr><td>12</td><td>F10</td><td>Jóhann Hjartarson</td><td class="n">71</td><td class="n">&minus;4</td><td class="n">13</td><td>Haaland</td><td class="n">26</td><td>Haaland 13</td><td class="n">114</td></tr>
+          <tr><td>13</td><td>BEPOOL</td><td>Björn Þór Jónsson</td><td class="n">57</td><td class="n">&mdash;</td><td class="n">13</td><td>Szoboszlai</td><td class="n">8</td><td>Calafiori 11</td><td class="n">113</td></tr>
+          <tr><td>14</td><td>Destiny's child</td><td>Baldur Páll Guðmundsson</td><td class="n">78</td><td class="n">&minus;4</td><td class="n">7</td><td>Haaland</td><td class="n">26</td><td>B.Fernandes 23</td><td class="n">113</td></tr>
+          <tr><td>15</td><td>Excel Lent</td><td>Bryndís Kristinsdóttir</td><td class="n">56</td><td class="n">&mdash;</td><td class="n">11</td><td>Haaland</td><td class="n">26</td><td>Haaland 13</td><td class="n">103</td></tr>
+          <tr><td>16</td><td>Sveinatunga FC</td><td>Jóhann G. Stefánsson</td><td class="n">58</td><td class="n">&mdash;</td><td class="n">3</td><td>Saka</td><td class="n">22</td><td>Mbeumo 11</td><td class="n">86</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </details>
+  <p class="note"><strong>GW2</strong> is the raw gameweek score; <strong>Hit</strong> is the transfer cost already subtracted from the season column. <strong>C pts</strong> is what the armband actually delivered, doubled. <strong>Bench</strong> is points left unused.</p>
+</section>
+
+<footer>
+  <p>Built from the official Fantasy Premier League API: classic league 813742 standings, each manager's Gameweek 2 picks and transfer history, and the GW2 live scoring feed, pulled 31 August 2026. Every squad's calculated total was checked against the score the game reports &mdash; all sixteen match exactly.</p>
+  <p class="mono">HR DEILDIN &middot; GAMEWEEK 2 &middot; 2026/27 &middot; LEAGUE AVERAGE 75.6 &middot; GLOBAL AVERAGE 79 &middot; GLOBAL HIGH 161 &middot; TOP PLAYER B.FERNANDES 23</p>
+</footer>
+</div>
+</div>
+
+<script>
+(function(){
+  var tabs = Array.prototype.slice.call(document.querySelectorAll('.gwnav button'));
+  function show(id, push){
+    if(!document.getElementById(id)) return;
+    tabs.forEach(function(t){
+      var on = t.dataset.gw === id;
+      t.setAttribute('aria-selected', on ? 'true' : 'false');
+      document.getElementById(t.dataset.gw).hidden = !on;
+    });
+    if(push && history.replaceState){ history.replaceState(null, '', '#' + id); }
+    window.scrollTo({top:0, behavior:'instant'});
+  }
+  tabs.forEach(function(t){
+    t.addEventListener('click', function(){ show(t.dataset.gw, true); });
+  });
+  var start = (location.hash || '').replace('#','');
+  show(/^gw\d+$/.test(start) ? start : 'gw2', false);
+  window.addEventListener('hashchange', function(){
+    var h = (location.hash || '').replace('#','');
+    if(/^gw\d+$/.test(h)) show(h, false);
+  });
+})();
+</script>
+
+</body>
+</html>
