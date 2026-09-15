@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Fantasy HR">
+  <defs><clipPath id="c"><rect width="64" height="64" rx="12"/></clipPath></defs>
+  <g clip-path="url(#c)">
+    <rect width="64" height="64" fill="#8E2740"/>
+    <rect y="35.84" width="64" height="28.16" fill="#D9B65A"/>
+    <g fill="#FFFFFF"><rect x="16.85" y="8.96" width="4.11" height="19.20"/><rect x="26.45" y="8.96" width="4.11" height="19.20"/><rect x="16.85" y="16.50" width="13.71" height="4.11"/><rect x="33.44" y="8.96" width="4.11" height="19.20"/><rect x="37.55" y="8.96" width="6.86" height="4.11"/><rect x="43.04" y="8.96" width="4.11" height="9.60"/><rect x="37.55" y="14.45" width="6.86" height="4.11"/><path d="M40.98,17.87 L46.06,17.87 L47.15,28.16 L42.08,28.16 Z"/></g>
+    <g fill="#8E2740"><rect x="16.05" y="41.92" width="2.74" height="12.80"/><rect x="16.05" y="41.92" width="9.14" height="2.74"/><rect x="16.05" y="46.95" width="7.31" height="2.74"/><rect x="27.43" y="41.92" width="2.74" height="12.80"/><rect x="30.17" y="41.92" width="4.57" height="2.74"/><rect x="33.83" y="41.92" width="2.74" height="6.40"/><rect x="30.17" y="45.58" width="4.57" height="2.74"/><rect x="38.81" y="41.92" width="2.74" height="12.80"/><rect x="38.81" y="51.98" width="8.23" height="2.74"/></g>
+  </g>
+</svg>
